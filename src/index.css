@@ -28,6 +28,7 @@ body,
 	background-color: lightcoral;
 	display: flex;
 	flex-direction: column;
+	height: 750px;
 }
 
 .map-container {

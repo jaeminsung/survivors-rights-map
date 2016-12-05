@@ -32,10 +32,17 @@ export default class Map extends React.Component {
 							highlightFillColor: '${fills[data.fillKey]}',
 							popupTemplate: (geography, data) =>
 								`<div class='hoverinfo'>
-									${geography.properties.name}
+									<strong class='title'>${geography.properties.name}</strong>
+									<p></p>
+									<ul style='list-style: none; padding-left:0;'>
+										<li><span>&#10004;</span> Right to have rape kit perserved</li>
+										<li><span>&#10004;</span> Right to be notified of the destruction of rape kit</li>
+										<li><span>&#10006;</span> Right to extend the preservation of rape kit</li>
+										<li><span>&#10006;</span> Right to request forensic exams and informed of the results</li>
+										<li><span>&#10004;</span> Right to access services and conseling by medical and legal professionals</li>
+									</ul>
 								</div>
 								`,
-								//`<div class='hoverinfo'>${geography.properties.name}\nElectoral Votes: ${data.electoralVotes}`,
 							highlightBorderWidth: 4
 						}}
 						fills={{
@@ -49,204 +56,154 @@ export default class Map extends React.Component {
 						}}
 						data={{
 							AZ: {
-								fillKey: 'No Rights',
-								electoralVotes: 5
+								fillKey: 'No Rights'
 							},
 							CO: {
-								fillKey: '3 Rights',
-								electoralVotes: 5
+								fillKey: '3 Rights'
 							},
 							DE: {
-								fillKey: '1 Right',
-								electoralVotes: 32
+								fillKey: '1 Right'
 							},
 							FL: {
-								fillKey: '2 Rights',
-								electoralVotes: 29
+								fillKey: '2 Rights'
 							},
 							GA: {
-								fillKey: '4 Rights',
-								electoralVotes: 32
+								fillKey: '4 Rights'
 							},
 							HI: {
-								fillKey: '1 Right',
-								electoralVotes: 32
+								fillKey: '1 Right'
 							},
 							ID: {
-								fillKey: 'No Rights',
-								electoralVotes: 32
+								fillKey: 'No Rights'
 							},
 							IL: {
-								fillKey: '1 Right',
-								electoralVotes: 32
+								fillKey: '1 Right'
 							},
 							IN: {
-								fillKey: 'No Rights',
-								electoralVotes: 11
+								fillKey: 'No Rights'
 							},
 							IA: {
-								fillKey: '3 Rights',
-								electoralVotes: 11
+								fillKey: '3 Rights'
 							},
 							KS: {
-								fillKey: '4 Rights',
-								electoralVotes: 32
+								fillKey: '4 Rights'
 							},
 							KY: {
-								fillKey: 'No Rights',
-								electoralVotes: 32
+								fillKey: 'No Rights'
 							},
 							LA: {
-								fillKey: 'No Rights',
-								electoralVotes: 32
+								fillKey: 'No Rights'
 							},
 							MD: {
-								fillKey: '1 Right',
-								electoralVotes: 32
+								fillKey: '1 Right'
 							},
 							ME: {
-								fillKey: '1 Right',
-								electoralVotes: 32
+								fillKey: '1 Right'
 							},
 							MA: {
-								fillKey: '1 Right',
-								electoralVotes: 32
+								fillKey: '1 Right'
 							},
 							MN: {
-								fillKey: '1 Right',
-								electoralVotes: 32
+								fillKey: '1 Right'
 							},
 							MI: {
-								fillKey: '1 Right',
-								electoralVotes: 32
+								fillKey: '1 Right'
 							},
 							MS: {
-								fillKey: 'No Rights',
-								electoralVotes: 32
+								fillKey: 'No Rights'
 							},
 							MO: {
-								fillKey: '4 Rights',
-								electoralVotes: 13
+								fillKey: '4 Rights'
 							},
 							MT: {
-								fillKey: 'No Rights',
-								electoralVotes: 32
+								fillKey: 'No Rights'
 							},
 							NC: {
-								fillKey: 'Full Rights',
-								electoralVotes: 32
+								fillKey: 'Full Rights'
 							},
 							NE: {
-								fillKey: 'No Rights',
-								electoralVotes: 32
+								fillKey: 'No Rights'
 							},
 							NV: {
-								fillKey: '2 Rights',
-								electoralVotes: 32
+								fillKey: '2 Rights'
 							},
 							NH: {
-								fillKey: '3 Rights',
-								electoralVotes: 32
+								fillKey: '3 Rights'
 							},
 							NJ: {
-								fillKey: '1 Right',
-								electoralVotes: 32
+								fillKey: '1 Right'
 							},
 							NY: {
-								fillKey: '1 Right',
-								electoralVotes: 32
+								fillKey: '1 Right'
 							},
 							ND: {
-								fillKey: 'No Rights',
-								electoralVotes: 32
+								fillKey: 'No Rights'
 							},
 							NM: {
-								fillKey: '1 Right',
-								electoralVotes: 32
+								fillKey: '1 Right'
 							},
 							OH: {
-								fillKey: '2 Rights',
-								electoralVotes: 32
+								fillKey: '2 Rights'
 							},
 							OK: {
-								fillKey: 'No Rights',
-								electoralVotes: 32
+								fillKey: 'No Rights'
 							},
 							OR: {
-								fillKey: '1 Right',
-								electoralVotes: 32
+								fillKey: '1 Right'
 							},
 							PA: {
-								fillKey: '1 Right',
-								electoralVotes: 32
+								fillKey: '1 Right'
 							},
 							RI: {
-								fillKey: '1 Right',
-								electoralVotes: 32
+								fillKey: '1 Right'
 							},
 							SC: {
-								fillKey: 'No Rights',
-								electoralVotes: 32
+								fillKey: 'No Rights'
 							},
 							SD: {
-								fillKey: 'No Rights',
-								electoralVotes: 32
+								fillKey: 'No Rights'
 							},
 							TN: {
-								fillKey: 'No Rights',
-								electoralVotes: 32
+								fillKey: 'No Rights'
 							},
 							TX: {
-								fillKey: 'No Rights',
-								electoralVotes: 32
+								fillKey: 'No Rights'
 							},
 							UT: {
-								fillKey: 'No Rights',
-								electoralVotes: 32
+								fillKey: 'No Rights'
 							},
 							WI: {
-								fillKey: '1 Right',
-								electoralVotes: 32
+								fillKey: '1 Right'
 							},
 							VA: {
-								fillKey: '3 Rights',
-								electoralVotes: 32
+								fillKey: '3 Rights'
 							},
 							VT: {
-								fillKey: '1 Right',
-								electoralVotes: 32
+								fillKey: '1 Right'
 							},
 							WA: {
-								fillKey: '1 Right',
-								electoralVotes: 32
+								fillKey: '1 Right'
 							},
 							WV: {
-								fillKey: 'No Rights',
-								electoralVotes: 32
+								fillKey: 'No Rights'
 							},
 							WY: {
-								fillKey: 'No Rights',
-								electoralVotes: 32
+								fillKey: 'No Rights'
 							},
 							CA: {
-								fillKey: '1 Right',
-								electoralVotes: 32
+								fillKey: '1 Right'
 							},
 							CT: {
-								fillKey: '1 Right',
-								electoralVotes: 32
+								fillKey: '1 Right'
 							},
 							AK: {
-								fillKey: 'No Rights',
-								electoralVotes: 32
+								fillKey: 'No Rights'
 							},
 							AR: {
-								fillKey: 'No Rights',
-								electoralVotes: 32
+								fillKey: 'No Rights'
 							},
 							AL: {
-								fillKey: 'No Rights',
-								electoralVotes: 32
+								fillKey: 'No Rights'
 							}
 						}}
 						labels
