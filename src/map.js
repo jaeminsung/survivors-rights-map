@@ -1,7 +1,5 @@
 import React from 'react';
-// import Image from 'react-native';
 import Datamap from './datamap';
-import { Form, Modal, ModalHeader, ModalBody } from 'react-bootstrap';
 
 export default class Map extends React.Component {
 
