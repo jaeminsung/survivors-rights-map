@@ -3,6 +3,46 @@ import Datamap from './datamap';
 
 export default class Map extends React.Component {
 
+	evaluateState(numRights){
+		if (numRights == 'No Rights') {
+			return `<li><span>&#10006;</span> Right to have rape kit perserved</li>
+				<li><span>&#10006;</span> Right to be notified of the destruction of rape kit</li>
+				<li><span>&#10006;</span> Right to extend the preservation of rape kit</li>
+				<li><span>&#10006;</span> Right to request forensic exams and informed of the results</li>
+				<li><span>&#10006;</span> Right to access services and conseling by medical and legal professionals</li>`;
+		} else if (numRights == '1 Right') {
+			return `<li><span>&#10004;</span> Right to have rape kit perserved</li>
+				<li><span>&#10006;</span> Right to be notified of the destruction of rape kit</li>
+				<li><span>&#10006;</span> Right to extend the preservation of rape kit</li>
+				<li><span>&#10006;</span> Right to request forensic exams and informed of the results</li>
+				<li><span>&#10006;</span> Right to access services and conseling by medical and legal professionals</li>`;
+		} else if (numRights == '2 Rights') {
+			return `<li><span>&#10004;</span> Right to have rape kit perserved</li>
+				<li><span>&#10004;</span> Right to be notified of the destruction of rape kit</li>
+				<li><span>&#10006;</span> Right to extend the preservation of rape kit</li>
+				<li><span>&#10006;</span> Right to request forensic exams and informed of the results</li>
+				<li><span>&#10006;</span> Right to access services and conseling by medical and legal professionals</li>`;
+		} else if (numRights == '3 Rights') {
+			return `<li><span>&#10004;</span> Right to have rape kit perserved</li>
+				<li><span>&#10004;</span> Right to be notified of the destruction of rape kit</li>
+				<li><span>&#10004;</span> Right to extend the preservation of rape kit</li>
+				<li><span>&#10006;</span> Right to request forensic exams and informed of the results</li>
+				<li><span>&#10006;</span> Right to access services and conseling by medical and legal professionals</li>`;
+		} else if (numRights == '4 Rights') {
+			return `<li><span>&#10004;</span> Right to have rape kit perserved</li>
+				<li><span>&#10004;</span> Right to be notified of the destruction of rape kit</li>
+				<li><span>&#10004;</span> Right to extend the preservation of rape kit</li>
+				<li><span>&#10004;</span> Right to request forensic exams and informed of the results</li>
+				<li><span>&#10006;</span> Right to access services and conseling by medical and legal professionals</li>`;
+		} else {
+			return `<li><span>&#10004;</span> Right to have rape kit perserved</li>
+				<li><span>&#10004;</span> Right to be notified of the destruction of rape kit</li>
+				<li><span>&#10004;</span> Right to extend the preservation of rape kit</li>
+				<li><span>&#10004;</span> Right to request forensic exams and informed of the results</li>
+				<li><span>&#10004;</span> Right to access services and conseling by medical and legal professionals</li>`;
+		}
+	}
+
 	render() {
 		return (
 			<div className="body-container">
@@ -35,11 +75,7 @@ export default class Map extends React.Component {
 									<strong class='title'>${geography.properties.name}</strong>
 									<p></p>
 									<ul style='list-style: none; padding-left:0;'>
-										<li><span>&#10004;</span> Right to have rape kit perserved</li>
-										<li><span>&#10004;</span> Right to be notified of the destruction of rape kit</li>
-										<li><span>&#10006;</span> Right to extend the preservation of rape kit</li>
-										<li><span>&#10006;</span> Right to request forensic exams and informed of the results</li>
-										<li><span>&#10004;</span> Right to access services and conseling by medical and legal professionals</li>
+										${this.evaluateState(data.fillKey)}
 									</ul>
 								</div>
 								`,
