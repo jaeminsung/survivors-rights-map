@@ -47,11 +47,9 @@ export default class Map extends React.Component {
 		return (
 			<div className="page">
 				<div className="header">
-					<h2 className="map-label">Sexual Assault Survivors' Rights Map</h2>
+					<h3 className="map-label">Sexual Assault Survivors' Rights Map</h3>
 					<p className="map-legend">
 						Here is a summary of the state laws for sexual assault surviviors. Click on each state for more details.
-						<br/>
-						[Disclaimer: the displayed information below is not accurate]
 					</p>
 				</div>
 				<div className="map-container">
@@ -256,7 +254,7 @@ export default class Map extends React.Component {
 				</div>
 				<div className="footer">
 					<p className="map-footer">
-						Copyright &#169; 2016 <a href="http://www.risenow.us/" className="rise">
+						Copyright &#169; 2017 <a href="http://www.risenow.us/" className="rise">
 							Rise Up, Inc
 						</a>
 					</p>

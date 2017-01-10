@@ -20,7 +20,7 @@ body,
 .page {
 	display: flex;
 	flex-direction: column;
-	background-color: #eee;
+	background-color: honeydew;
 	font-family: 'Lato','Montserrat', Arial, sans-serif;
 	color: floralwhite;
 }
