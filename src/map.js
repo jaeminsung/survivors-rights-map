@@ -1,4 +1,5 @@
 import React from 'react';
+import Popup from 'react-popup';
 import Datamap from './datamap';
 
 export default class Map extends React.Component {
@@ -56,18 +57,18 @@ export default class Map extends React.Component {
 					<div className="map-header">
 						<div className="category-container">
 							<img className="category-img" src={require("./images/no_rights.png")} alt="no_right_color"/>
-							<div className="category">no rights</div>
+							<div className="category">no implementation</div>
 						</div>
 						<div className="category-container">
 							<img className="category-img" src={require("./images/1_right.png")} alt="2_rights_color"/>
 							<img className="category-img" src={require("./images/2_rights.png")} alt="2_rights_color"/>
 							<img className="category-img" src={require("./images/3_rights.png")} alt="2_rights_color"/>
 							<img className="category-img" src={require("./images/4_rights.png")} alt="2_rights_color"/>
-							<div className="category">some rights</div>
+							<div className="category">partially implemented</div>
 						</div>
 						<div className="category-container">
 							<img className="category-img" src={require("./images/5_rights.png")} alt="5_rights_color"/>
-							<div className="category">full rights</div>
+							<div className="category">fully implemented</div>
 						</div>
 					</div>
 					<div className="map">
@@ -76,15 +77,21 @@ export default class Map extends React.Component {
 							geographyConfig={{
 								highlightBorderColor: '#bada55',
 								highlightFillColor: '${fills[data.fillKey]}',
-								popupTemplate: (geography, data) =>
-									`<div class='hoverinfo' style='color: black;'>
-										<strong class='title'>${geography.properties.name}</strong>
-										<p></p>
-										<ul style='list-style: none; padding-left:0;'>
-											${this.evaluateState(data.fillKey)}
-										</ul>
+								popupTemplate: function(geography, data) {
+									Popup.alert('Hello, look at me');
+									return [`<div class='hoverinfo'>
+										<h2>${geography.properties.name}</h2>
+										<h3>Lead Sponsors: </h3>
+										<p>Representative Tricia-Farley Bouvier, Senator Cindy Creem, 31 bipartisan Co-Sponsors</p>
+										<h3>Status: </h3>
+										<p>Passed Unanimously through House and Senate; Signed by Governor Baker</p>
+										<h3>Riser: Amanda Nguyen</h3>
+										<br>
+										<p>This legislation was born from my experience with a broken justice system. I am a rape survivor. I remember walking into the local area rape crisis center waiting room and seeing so many survivors there. The greatest injustice I have ever faced was not the act of rape itself, but the subsequent denial of my rights by the country I love. I grew up believing that America is special because it recognizes universal, inalienable rights. But as a rape survivor, I learned that not all are equal in the eyes of the law. Survivors are continually re-victimized by the very system that was built to seek justice for them. It’s completely unconscionable that a survivor in one state would have a completely different set of rights than a survivor in another state. In building a legal argument for why I deserve to know where the DNA samples taken from my body were stored, I found a patchwork of rights across America. Two survivors shouldn’t have two completely different sets of rights just because they are in two different states. Justice should not depend on geography. My story with a broken system is not mine alone. In facing all of these disparities I realized I had a choice. Accept the injustice or re-write the law. So I, along with an incredible team, wrote this bill. Now it is Federal law and Massachusetts law. I’m going to be honest. Talking about something so personal is scary. But I’m sharing this because I hope you see the importance of these civil rights and I hope that you join us to champion these rights in your state. 
+										</p>
 									</div>
-									`,
+									`];
+							},
 								highlightBorderWidth: 4
 							}}
 							fills={{
@@ -101,34 +108,34 @@ export default class Map extends React.Component {
 									fillKey: 'No Rights'
 								},
 								CO: {
-									fillKey: '3 Rights'
+									fillKey: 'No Rights'
 								},
 								DE: {
-									fillKey: '1 Right'
+									fillKey: 'No Rights'
 								},
 								FL: {
-									fillKey: '2 Rights'
+									fillKey: 'No Rights'
 								},
 								GA: {
-									fillKey: '4 Rights'
+									fillKey: 'No Rights'
 								},
 								HI: {
-									fillKey: '1 Right'
+									fillKey: 'No Rights'
 								},
 								ID: {
 									fillKey: 'No Rights'
 								},
 								IL: {
-									fillKey: '1 Right'
+									fillKey: 'No Rights'
 								},
 								IN: {
 									fillKey: 'No Rights'
 								},
 								IA: {
-									fillKey: '3 Rights'
+									fillKey: 'No Rights'
 								},
 								KS: {
-									fillKey: '4 Rights'
+									fillKey: 'No Rights'
 								},
 								KY: {
 									fillKey: 'No Rights'
@@ -137,67 +144,67 @@ export default class Map extends React.Component {
 									fillKey: 'No Rights'
 								},
 								MD: {
-									fillKey: '1 Right'
+									fillKey: 'No Rights'
 								},
 								ME: {
-									fillKey: '1 Right'
+									fillKey: 'No Rights'
 								},
 								MA: {
-									fillKey: '1 Right'
+									fillKey: 'No Rights'
 								},
 								MN: {
-									fillKey: '1 Right'
+									fillKey: 'No Rights'
 								},
 								MI: {
-									fillKey: '1 Right'
+									fillKey: 'No Rights'
 								},
 								MS: {
 									fillKey: 'No Rights'
 								},
 								MO: {
-									fillKey: '4 Rights'
+									fillKey: 'No Rights'
 								},
 								MT: {
 									fillKey: 'No Rights'
 								},
 								NC: {
-									fillKey: 'Full Rights'
+									fillKey: 'No Rights'
 								},
 								NE: {
 									fillKey: 'No Rights'
 								},
 								NV: {
-									fillKey: '2 Rights'
+									fillKey: 'No Rights'
 								},
 								NH: {
-									fillKey: '3 Rights'
+									fillKey: 'No Rights'
 								},
 								NJ: {
-									fillKey: '1 Right'
+									fillKey: 'No Rights'
 								},
 								NY: {
-									fillKey: '1 Right'
+									fillKey: 'No Rights'
 								},
 								ND: {
 									fillKey: 'No Rights'
 								},
 								NM: {
-									fillKey: '1 Right'
+									fillKey: 'No Rights'
 								},
 								OH: {
-									fillKey: '2 Rights'
+									fillKey: 'No Rights'
 								},
 								OK: {
 									fillKey: 'No Rights'
 								},
 								OR: {
-									fillKey: '1 Right'
+									fillKey: 'No Rights'
 								},
 								PA: {
-									fillKey: '1 Right'
+									fillKey: 'No Rights'
 								},
 								RI: {
-									fillKey: '1 Right'
+									fillKey: 'No Rights'
 								},
 								SC: {
 									fillKey: 'No Rights'
@@ -215,16 +222,16 @@ export default class Map extends React.Component {
 									fillKey: 'No Rights'
 								},
 								WI: {
-									fillKey: '1 Right'
+									fillKey: 'No Rights'
 								},
 								VA: {
-									fillKey: '3 Rights'
+									fillKey: 'No Rights'
 								},
 								VT: {
-									fillKey: '1 Right'
+									fillKey: 'No Rights'
 								},
 								WA: {
-									fillKey: '1 Right'
+									fillKey: 'No Rights'
 								},
 								WV: {
 									fillKey: 'No Rights'
@@ -233,10 +240,10 @@ export default class Map extends React.Component {
 									fillKey: 'No Rights'
 								},
 								CA: {
-									fillKey: '1 Right'
+									fillKey: 'No Rights'
 								},
 								CT: {
-									fillKey: '1 Right'
+									fillKey: 'No Rights'
 								},
 								AK: {
 									fillKey: 'No Rights'
