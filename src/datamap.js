@@ -1,5 +1,7 @@
 import React from 'react';
 import Datamaps from 'datamaps';
+import Popup from 'react-popup';
+import './datamap.css'
 
 const MAP_CLEARING_PROPS = [
 	'height', 'scope', 'setProjection', 'width'
@@ -74,7 +76,17 @@ export default class Datamap extends React.Component {
 			map = this.map = new Datamaps({
 				...props,
 				data,
-				element: this.refs.container
+				element: this.refs.container,
+				responsive: true,
+				done: function(datamap) {
+					datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
+						Popup.alert('Need to pass in customized html here...', geography.properties.name);
+					});
+				}
+			});
+
+			window.addEventListener('resize', function() {
+				map.resize();
 			});
 		} else {
 			map.updateChoropleth(data, updateChoroplethOptions);
@@ -105,7 +117,14 @@ export default class Datamap extends React.Component {
 			...this.props.style
 		};
 
-		return <div ref="container" style={style} />;
+		return (
+				<div>
+				<Popup />
+				<div ref="container" style={style} />
+				
+				</div>
+
+			);
 	}
 
 }

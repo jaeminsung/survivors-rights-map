@@ -1,5 +1,4 @@
 import React from 'react';
-import Popup from 'react-popup';
 import Datamap from './datamap';
 
 export default class Map extends React.Component {
@@ -73,12 +72,13 @@ export default class Map extends React.Component {
 					</div>
 					<div className="map">
 						<Datamap
+							id="dataMap"
 							scope="usa"
 							geographyConfig={{
 								highlightBorderColor: '#bada55',
 								highlightFillColor: '${fills[data.fillKey]}',
+								popupOnHover: false,
 								popupTemplate: function(geography, data) {
-									Popup.alert('Hello, look at me');
 									return [`<div class='hoverinfo'>
 										<h2>${geography.properties.name}</h2>
 										<h3>Lead Sponsors: </h3>
