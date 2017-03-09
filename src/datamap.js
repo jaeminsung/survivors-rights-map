@@ -13,6 +13,18 @@ const propChangeRequiresMapClear = (oldProps, newProps) => {
 	);
 };
 
+var PopUpComponent = React.createClass({
+  render: function() {
+    return (
+      <div>
+      	<h1>State: {this.props.stateName}</h1>
+      	<h2>{this.props.leadSponsors}</h2>
+      	<h2>{this.props.status}</h2>
+      </div>
+    );
+  }
+});
+
 export default class Datamap extends React.Component {
 
 	static propTypes = {
@@ -80,7 +92,11 @@ export default class Datamap extends React.Component {
 				responsive: true,
 				done: function(datamap) {
 					datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
-						Popup.alert('Need to pass in customized html here...', geography.properties.name);
+						let dataInfo = JSON.parse(event.target.getAttributeNode('data-info').value)
+						let leadSponsors = dataInfo["leadSponsors"]
+						let status = dataInfo["status"]
+						let stateName = geography.properties["name"]
+						Popup.alert(<PopUpComponent stateName={stateName} leadSponsors={leadSponsors} status={status} />);
 					});
 				}
 			});
