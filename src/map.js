@@ -3,46 +3,6 @@ import Datamap from './datamap';
 
 export default class Map extends React.Component {
 
-	evaluateState(numRights){
-		if (numRights == 'No Rights') {
-			return `<li><span>&#10006;</span> Right to have rape kit perserved</li>
-				<li><span>&#10006;</span> Right to be notified of the destruction of rape kit</li>
-				<li><span>&#10006;</span> Right to extend the preservation of rape kit</li>
-				<li><span>&#10006;</span> Right to request forensic exams and informed of the results</li>
-				<li><span>&#10006;</span> Right to access services and conseling by medical and legal professionals</li>`;
-		} else if (numRights == '1 Right') {
-			return `<li><span>&#10004;</span> Right to have rape kit perserved</li>
-				<li><span>&#10006;</span> Right to be notified of the destruction of rape kit</li>
-				<li><span>&#10006;</span> Right to extend the preservation of rape kit</li>
-				<li><span>&#10006;</span> Right to request forensic exams and informed of the results</li>
-				<li><span>&#10006;</span> Right to access services and conseling by medical and legal professionals</li>`;
-		} else if (numRights == '2 Rights') {
-			return `<li><span>&#10004;</span> Right to have rape kit perserved</li>
-				<li><span>&#10004;</span> Right to be notified of the destruction of rape kit</li>
-				<li><span>&#10006;</span> Right to extend the preservation of rape kit</li>
-				<li><span>&#10006;</span> Right to request forensic exams and informed of the results</li>
-				<li><span>&#10006;</span> Right to access services and conseling by medical and legal professionals</li>`;
-		} else if (numRights == '3 Rights') {
-			return `<li><span>&#10004;</span> Right to have rape kit perserved</li>
-				<li><span>&#10004;</span> Right to be notified of the destruction of rape kit</li>
-				<li><span>&#10004;</span> Right to extend the preservation of rape kit</li>
-				<li><span>&#10006;</span> Right to request forensic exams and informed of the results</li>
-				<li><span>&#10006;</span> Right to access services and conseling by medical and legal professionals</li>`;
-		} else if (numRights == '4 Rights') {
-			return `<li><span>&#10004;</span> Right to have rape kit perserved</li>
-				<li><span>&#10004;</span> Right to be notified of the destruction of rape kit</li>
-				<li><span>&#10004;</span> Right to extend the preservation of rape kit</li>
-				<li><span>&#10004;</span> Right to request forensic exams and informed of the results</li>
-				<li><span>&#10006;</span> Right to access services and conseling by medical and legal professionals</li>`;
-		} else {
-			return `<li><span>&#10004;</span> Right to have rape kit perserved</li>
-				<li><span>&#10004;</span> Right to be notified of the destruction of rape kit</li>
-				<li><span>&#10004;</span> Right to extend the preservation of rape kit</li>
-				<li><span>&#10004;</span> Right to request forensic exams and informed of the results</li>
-				<li><span>&#10004;</span> Right to access services and conseling by medical and legal professionals</li>`;
-		}
-	}
-
 	render() {
 		return (
 			<div className="page">
@@ -78,20 +38,6 @@ export default class Map extends React.Component {
 								highlightBorderColor: '#bada55',
 								highlightFillColor: '${fills[data.fillKey]}',
 								popupOnHover: false,
-								popupTemplate: function(geography, data) {
-									return [`<div class='hoverinfo'>
-										<h2>${geography.properties.name}</h2>
-										<h3>Lead Sponsors: </h3>
-										<p>Representative Tricia-Farley Bouvier, Senator Cindy Creem, 31 bipartisan Co-Sponsors</p>
-										<h3>Status: </h3>
-										<p>Passed Unanimously through House and Senate; Signed by Governor Baker</p>
-										<h3>Riser: Amanda Nguyen</h3>
-										<br>
-										<p>This legislation was born from my experience with a broken justice system. I am a rape survivor. I remember walking into the local area rape crisis center waiting room and seeing so many survivors there. The greatest injustice I have ever faced was not the act of rape itself, but the subsequent denial of my rights by the country I love. I grew up believing that America is special because it recognizes universal, inalienable rights. But as a rape survivor, I learned that not all are equal in the eyes of the law. Survivors are continually re-victimized by the very system that was built to seek justice for them. It’s completely unconscionable that a survivor in one state would have a completely different set of rights than a survivor in another state. In building a legal argument for why I deserve to know where the DNA samples taken from my body were stored, I found a patchwork of rights across America. Two survivors shouldn’t have two completely different sets of rights just because they are in two different states. Justice should not depend on geography. My story with a broken system is not mine alone. In facing all of these disparities I realized I had a choice. Accept the injustice or re-write the law. So I, along with an incredible team, wrote this bill. Now it is Federal law and Massachusetts law. I’m going to be honest. Talking about something so personal is scary. But I’m sharing this because I hope you see the importance of these civil rights and I hope that you join us to champion these rights in your state. 
-										</p>
-									</div>
-									`];
-							},
 								highlightBorderWidth: 4
 							}}
 							fills={{
