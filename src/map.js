@@ -51,13 +51,19 @@ export default class Map extends React.Component {
 							}}
 							data={{
 								AZ: {
-									fillKey: 'No Rights'
+									fillKey: 'No Rights', 
+									leadSponsors: 'SPONSORS', 
+									status: 'STATUS'
 								},
 								CO: {
-									fillKey: 'No Rights'
+									fillKey: 'No Rights',
+									leadSponsors: 'SPONSORS', 
+									status: 'STATUS'
 								},
 								DE: {
-									fillKey: 'No Rights'
+									fillKey: 'No Rights',
+									leadSponsors: 'SPONSORS', 
+									status: 'STATUS'
 								},
 								FL: {
 									fillKey: 'No Rights'
