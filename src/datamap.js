@@ -1,7 +1,8 @@
 import React from 'react';
 import Datamaps from 'datamaps';
 import Popup from 'react-popup';
-import './datamap.css'
+import './datamap.css';
+import jsonfile from 'jsonfile';
 
 const MAP_CLEARING_PROPS = [
 	'height', 'scope', 'setProjection', 'width'
@@ -14,16 +15,21 @@ const propChangeRequiresMapClear = (oldProps, newProps) => {
 };
 
 var PopUpComponent = React.createClass({
-  render: function() {
-    return (
-      <div>
-      	<h1>State: {this.props.stateName}</h1>
-      	<h2>{this.props.leadSponsors}</h2>
-      	<h2>{this.props.status}</h2>
-      </div>
-    );
-  }
-});
+	render: function() {
+		return (
+			<div>
+				<p><span className='popup-label'>Sponsors: </span>{this.props.sponsors}</p>
+				<br/>
+				<p><span className='popup-label'>Status: </span>{this.props.status}</p>
+				<br/>
+				<p><span className='popup-label'>Riser: </span>{this.props.riser}</p>
+				<br/>
+				<div className='popup-label'>Narrative: </div>
+				<p>{this.props.narrative}</p>
+			</div>
+		);
+	}
+});	
 
 export default class Datamap extends React.Component {
 
@@ -93,10 +99,26 @@ export default class Datamap extends React.Component {
 				done: function(datamap) {
 					datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
 						let dataInfo = JSON.parse(event.target.getAttributeNode('data-info').value)
-						let leadSponsors = dataInfo["leadSponsors"]
+						let sponsors = dataInfo["sponsors"]
 						let status = dataInfo["status"]
+						let riser = dataInfo["riser"]
+						let narrative = dataInfo["narrative"]
 						let stateName = geography.properties["name"]
-						Popup.alert(<PopUpComponent stateName={stateName} leadSponsors={leadSponsors} status={status} />);
+						Popup.create({
+							title: stateName,
+							content: <PopUpComponent sponsors={sponsors} status={status} riser={riser} narrative={narrative} />,
+							className: 'alert',
+							buttons: {
+								right: [{
+									text: `Help ${riser}`,
+									className: 'success',
+									action: function () {
+										window.open('http://risenow.us');
+										Popup.close();
+									}
+								}]
+							}
+						});
 					});
 				}
 			});
@@ -121,7 +143,7 @@ export default class Datamap extends React.Component {
 		}
 
 		if (labels) {
-			map.labels({labelColor: 'navy', fontSize: 11});
+			map.labels({labelColor: 'black', fontSize: 11});
 		}
 	}
 
@@ -135,11 +157,9 @@ export default class Datamap extends React.Component {
 
 		return (
 				<div>
-				<Popup />
-				<div ref="container" style={style} />
-				
+					<Popup />
+					<div ref="container" style={style} />
 				</div>
-
 			);
 	}
 

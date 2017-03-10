@@ -8,10 +8,12 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "datamaps": "^0.5.8",
+    "jsonfile": "^2.4.0",
     "less": "^2.7.2",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.1",
+    "react-fontawesome": "^1.5.0",
     "react-popup": "^0.5.0"
   },
   "scripts": {

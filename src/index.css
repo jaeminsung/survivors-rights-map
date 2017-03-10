@@ -59,17 +59,12 @@ body,
 
 .map-header {
 	margin-top: 50px;
+	margin-left: 5%;
 }
 
 .category-container {
 	display: inline-block;
 	margin-right: 20px;
-}
-
-.category-img {
-	display: inline-block;
-	width: 20px;
-	margin-right: 7px;
 }
 
 .category {
@@ -91,4 +86,22 @@ body,
 
 .rise {
 	text-decoration: underline
+}
+
+.impl-icon {
+	display: inline-block;
+	font-size: 24px;
+	padding-right: 5px;
+}
+
+.no-impl {
+	color: #d9d9d9;
+}
+
+.partial-impl {
+	color: #f9cb9c;
+}
+
+.full-impl {
+	color: #409fdf;
 }
