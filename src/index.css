@@ -21,7 +21,7 @@ body,
 	display: flex;
 	flex-direction: column;
 	background-color: honeydew;
-	font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	color: floralwhite;
 }
 

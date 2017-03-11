@@ -16,16 +16,25 @@ const propChangeRequiresMapClear = (oldProps, newProps) => {
 
 var PopUpComponent = React.createClass({
 	render: function() {
+		let status = null;
+		let narrative = null;
+
+		if (this.props.status != '') {
+			status = <div><p><span className='popup-label'>Status: </span>{this.props.status}</p><br/></div>;
+		} 
+
+		if (this.props.narrative != '') {
+			narrative = <div><div className='popup-label'>Narrative: </div><p>{this.props.narrative}</p></div>;
+		}
+
 		return (
 			<div>
 				<p><span className='popup-label'>Sponsors: </span>{this.props.sponsors}</p>
 				<br/>
-				<p><span className='popup-label'>Status: </span>{this.props.status}</p>
-				<br/>
+				{status}
 				<p><span className='popup-label'>Riser: </span>{this.props.riser}</p>
 				<br/>
-				<div className='popup-label'>Narrative: </div>
-				<p>{this.props.narrative}</p>
+				{narrative}
 			</div>
 		);
 	}
@@ -102,15 +111,17 @@ export default class Datamap extends React.Component {
 						let sponsors = dataInfo["sponsors"]
 						let status = dataInfo["status"]
 						let riser = dataInfo["riser"]
+						let help_riser = riser == 'RISER NEEDED' ? 'Rise' : riser
 						let narrative = dataInfo["narrative"]
 						let stateName = geography.properties["name"]
+						
 						Popup.create({
 							title: stateName,
 							content: <PopUpComponent sponsors={sponsors} status={status} riser={riser} narrative={narrative} />,
 							className: 'alert',
 							buttons: {
 								right: [{
-									text: `Help ${riser}`,
+									text: `Help ${help_riser}`,
 									className: 'success',
 									action: function () {
 										window.open('http://risenow.us');

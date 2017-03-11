@@ -64,12 +64,12 @@
     box-sizing: border-box;
     padding: 0 10px;
     margin: 0;
-    line-height: 32px;
-    height: 32px;
+    line-height: 40px;
+    height: 40px;
     border: 1px solid #666;
     text-align: center;
     display: inline-block;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     color: #333;
     background: transparent;
@@ -80,8 +80,10 @@
 }
 
 .mm-popup__btn--success {
-    background-color: #27ae60;
-    border-color: #27ae60;
+    /*background-color: #27ae60;
+    border-color: #27ae60;*/
+    background-color: rgb(64, 159, 223);
+    border-color: rgb(64, 159, 223);
     color: #fff;
 }
 
@@ -119,7 +121,7 @@
     }
 
 .mm-popup__box__body {
-    height: 350px;
+    max-height: 350px;
     overflow: scroll;
     padding: 20px;
     line-height: 1.4;
@@ -140,7 +142,8 @@
 }
 
     .mm-popup__box__footer__right-space {
-        float: right;
+        /*float: right;*/
+        text-align: center;
     }
 
         .mm-popup__box__footer__right-space .mm-popup__btn {
