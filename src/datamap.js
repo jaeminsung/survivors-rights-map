@@ -111,7 +111,7 @@ export default class Datamap extends React.Component {
 						let sponsors = dataInfo["sponsors"]
 						let status = dataInfo["status"]
 						let riser = dataInfo["riser"]
-						let help_riser = riser == 'RISER NEEDED' ? 'Rise' : riser
+						let help_riser = riser == 'RISER NEEDED' ? 'the Movement' : riser
 						let narrative = dataInfo["narrative"]
 						let stateName = geography.properties["name"]
 						
