@@ -2,7 +2,6 @@ import React from 'react';
 import Datamaps from 'datamaps';
 import Popup from 'react-popup';
 import './datamap.css';
-import jsonfile from 'jsonfile';
 
 const MAP_CLEARING_PROPS = [
 	'height', 'scope', 'setProjection', 'width'
@@ -19,11 +18,11 @@ var PopUpComponent = React.createClass({
 		let status = null;
 		let narrative = null;
 
-		if (this.props.status != '') {
+		if (this.props.status !== '') {
 			status = <div><p><span className='popup-label'>Status: </span>{this.props.status}</p><br/></div>;
 		} 
 
-		if (this.props.narrative != '') {
+		if (this.props.narrative !== '') {
 			narrative = <div><div className='popup-label'>Narrative: </div><p>{this.props.narrative}</p></div>;
 		}
 
@@ -111,7 +110,7 @@ export default class Datamap extends React.Component {
 						let sponsors = dataInfo["sponsors"]
 						let status = dataInfo["status"]
 						let riser = dataInfo["riser"]
-						let help_riser = riser == 'RISER NEEDED' ? 'the Movement' : riser
+						let help_riser = riser === 'RISER NEEDED' ? 'the Movement' : riser
 						let narrative = dataInfo["narrative"]
 						let stateName = geography.properties["name"]
 						

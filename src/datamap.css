@@ -96,7 +96,7 @@
 .mm-popup__box {
     width: 60%;
     position: absolute;
-    top: 10%;
+    top: 15%;
     left: 20%;
     /*margin-left: -175px;*/
     background: #fff;
@@ -122,7 +122,8 @@
 
 .mm-popup__box__body {
     max-height: 350px;
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
     padding: 20px;
     line-height: 1.4;
     font-size: 14px;

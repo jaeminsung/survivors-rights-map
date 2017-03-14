@@ -7,10 +7,10 @@ export default class Map extends React.Component {
 		return (
 			<div className="page">
 				<div className="header">
-					<h3 className="map-label">Sexual Assault Survivors' Rights Map</h3>
-					<p className="map-legend">
-						Follow the progress of the implementation of Sexual Assault Survivors' Rights in all 50 states. Click each state for more details.
-					</p>
+					<h3 className="map-label">Join the Movement: Click Your State</h3>
+					{/*<p className="map-legend">
+						Follow the progress of the implementation of Sexual Assault Survivors' Rights in all 50 states.
+					</p>*/}
 				</div>
 				<div className="map-container">
 					<div className="map-header">
@@ -368,7 +368,7 @@ export default class Map extends React.Component {
 									narrative: ''
 								},
 								WV: {
-									fillKey: 'No Impl',
+									fillKey: 'Partial Impl',
 									sponsors: 'SPONSORS NEEDED',
 									status: '',
 									riser: 'RISER NEEDED',
@@ -400,13 +400,13 @@ export default class Map extends React.Component {
 						/>
 					</div>
 				</div>
-				<div className="footer">
+				{/*<div className="footer">
 					<p className="map-footer">
 						Copyright &#169; 2017 <a href="http://www.risenow.us/" className="rise">
 							Rise Up, Inc
 						</a>
 					</p>
-				</div>
+				</div>*/}
 			</div>
 		);
 	}
