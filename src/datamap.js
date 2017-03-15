@@ -17,13 +17,18 @@ var PopUpComponent = React.createClass({
 	render: function() {
 		let status = null;
 		let narrative = null;
+		let victory = null;
 
-		if (this.props.status !== '') {
-			status = <div><p><span className='popup-label'>Status: </span>{this.props.status}</p><br/></div>;
-		} 
+		if (this.props.victory == true) {
+			victory = <div><h1>Victory accomplished! Click on another state to help there!</h1></div>;
+		} else {
+			if (this.props.status !== '') {
+				status = <div><p><span className='popup-label'>Status: </span>{this.props.status}</p><br/></div>;
+			} 
 
-		if (this.props.narrative !== '') {
-			narrative = <div><div className='popup-label'>Narrative: </div><p>{this.props.narrative}</p></div>;
+			if (this.props.narrative !== '') {
+				narrative = <div><div className='popup-label'>Narrative: </div><p>{this.props.narrative}</p></div>;
+			}
 		}
 
 		return (
@@ -34,6 +39,7 @@ var PopUpComponent = React.createClass({
 				<p><span className='popup-label'>Riser: </span>{this.props.riser}</p>
 				<br/>
 				{narrative}
+				{victory}
 			</div>
 		);
 	}
@@ -113,22 +119,30 @@ export default class Datamap extends React.Component {
 						let help_riser = riser === 'RISER NEEDED' ? 'the Movement' : riser
 						let narrative = dataInfo["narrative"]
 						let stateName = geography.properties["name"]
-						
-						Popup.create({
-							title: stateName,
-							content: <PopUpComponent sponsors={sponsors} status={status} riser={riser} narrative={narrative} />,
-							className: 'alert',
-							buttons: {
-								right: [{
-									text: `Help ${help_riser}`,
-									className: 'success',
-									action: function () {
-										window.open('http://risenow.us');
-										Popup.close();
-									}
-								}]
-							}
-						});
+						let victory = dataInfo["victory"] || false
+						if (victory) {
+							Popup.create({
+								title: stateName,
+								content: <PopUpComponent sponsors={sponsors} status={status} riser={riser} narrative={narrative} victory={victory} />,
+								className: 'alert'
+							});
+						} else {
+							Popup.create({
+								title: stateName,
+								content: <PopUpComponent sponsors={sponsors} status={status} riser={riser} narrative={narrative}/>,
+								className: 'alert',
+								buttons: {
+									right: [{
+										text: `Help ${help_riser}`,
+										className: 'success',
+										action: function () {
+											window.open('http://risenow.us');
+											Popup.close();
+										}
+									}]
+								}
+							});
+						}
 					});
 				}
 			});
