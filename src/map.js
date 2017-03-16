@@ -7,7 +7,7 @@ export default class Map extends React.Component {
 		return (
 			<div className="page">
 				<div className="header">
-					<h3 className="map-label">Join the Movement: Click Your State</h3>
+					<h3 className="map-label">Follow the Movement: Click Your State</h3>
 					{/*<p className="map-legend">
 						Follow the progress of the implementation of Sexual Assault Survivors' Rights in all 50 states.
 					</p>*/}
@@ -342,7 +342,7 @@ export default class Map extends React.Component {
 									narrative: ''
 								},
 								TX: {
-									fillKey: 'No Impl',
+									fillKey: 'Partial Impl',
 									sponsors: 'SPONSORS NEEDED',
 									status: '',
 									riser: 'Wendy Davis',

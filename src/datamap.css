@@ -16,7 +16,7 @@
     z-index: 1000;
     overflow: auto;
     display: none;
-    background: rgba(0, 0, 0, .1);
+    /*background: rgba(0, 0, 0, .1);*/
 }
 
 .mm-popup--visible {

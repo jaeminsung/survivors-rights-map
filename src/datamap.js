@@ -19,8 +19,20 @@ var PopUpComponent = React.createClass({
 		let narrative = null;
 		let victory = null;
 
-		if (this.props.victory == true) {
-			victory = <div><h1>Victory accomplished! Click on another state to help there!</h1></div>;
+		if (this.props.victory === true) {
+			victory = <div>
+						<h1 style={{textAlign: 'center', color: '#da6a50'}}>VICTORY!!</h1>
+						<br/>
+						<p style={{margin: 'margin: 0 20px 0 20px'}}>The Survivors' Bill of Rights has been implemented here! 
+							The Riser(s) responsible for leading the movement was 
+							<span style={{fontWeight: 'bold'}}> {this.props.riser}</span>.
+						</p>
+					</div>;
+			return (
+				<div>
+					{victory}
+				</div>
+			);
 		} else {
 			if (this.props.status !== '') {
 				status = <div><p><span className='popup-label'>Status: </span>{this.props.status}</p><br/></div>;
@@ -29,19 +41,19 @@ var PopUpComponent = React.createClass({
 			if (this.props.narrative !== '') {
 				narrative = <div><div className='popup-label'>Narrative: </div><p>{this.props.narrative}</p></div>;
 			}
-		}
 
-		return (
-			<div>
-				<p><span className='popup-label'>Sponsors: </span>{this.props.sponsors}</p>
-				<br/>
-				{status}
-				<p><span className='popup-label'>Riser: </span>{this.props.riser}</p>
-				<br/>
-				{narrative}
-				{victory}
-			</div>
-		);
+			return (
+				<div>
+					<p><span className='popup-label'>Sponsors: </span>{this.props.sponsors}</p>
+					<br/>
+					{status}
+					<p><span className='popup-label'>Riser: </span>{this.props.riser}</p>
+					<br/>
+					{narrative}
+					{victory}
+				</div>
+			);
+		}
 	}
 });	
 
@@ -124,7 +136,16 @@ export default class Datamap extends React.Component {
 							Popup.create({
 								title: stateName,
 								content: <PopUpComponent sponsors={sponsors} status={status} riser={riser} narrative={narrative} victory={victory} />,
-								className: 'alert'
+								className: 'alert',
+								buttons: {
+									right: [{
+										text: `Return and Help Another State`,
+										className: 'ok',
+										action: function () {
+											Popup.close();
+										}
+									}]
+								}	
 							});
 						} else {
 							Popup.create({
