@@ -176,7 +176,8 @@ export default class Map extends React.Component {
 									sponsors: "Representative Tricia-Farley Bouvier, Senator Cindy Creem, 31 bipartisan Co-Sponsors",
 									status : "Passed Unanimously through House and Senate; Signed by Governor Baker",
 									riser : "Amanda Nguyen and Sophie Gould",
-									narrative : "This legislation was born from my experience with a broken justice system. I am a rape survivor. I remember walking into the local area rape crisis center waiting room and seeing so many survivors there. The greatest injustice I have ever faced was not the act of rape itself, but the subsequent denial of my rights by the country I love. I grew up believing that America is special because it recognizes universal, inalienable rights. But as a rape survivor, I learned that not all are equal in the eyes of the law. Survivors are continually re-victimized by the very system that was built to seek justice for them. It’s completely unconscionable that a survivor in one state would have a completely different set of rights than a survivor in another state. In building a legal argument for why I deserve to know where the DNA samples taken from my body were stored, I found a patchwork of rights across America. Two survivors shouldn’t have two completely different sets of rights just because they are in two different states. Justice should not depend on geography. My story with a broken system is not mine alone. In facing all of these disparities I realized I had a choice. Accept the injustice or re-write the law. So I, along with an incredible team, wrote this bill. Now it is Federal law and Massachusetts law. I’m going to be honest. Talking about something so personal is scary. But I’m sharing this because I hope you see the importance of these civil rights and I hope that you join us to champion these rights in your state. "
+									narrative : "This legislation was born from my experience with a broken justice system. I am a rape survivor. I remember walking into the local area rape crisis center waiting room and seeing so many survivors there. The greatest injustice I have ever faced was not the act of rape itself, but the subsequent denial of my rights by the country I love. I grew up believing that America is special because it recognizes universal, inalienable rights. But as a rape survivor, I learned that not all are equal in the eyes of the law. Survivors are continually re-victimized by the very system that was built to seek justice for them. It’s completely unconscionable that a survivor in one state would have a completely different set of rights than a survivor in another state. In building a legal argument for why I deserve to know where the DNA samples taken from my body were stored, I found a patchwork of rights across America. Two survivors shouldn’t have two completely different sets of rights just because they are in two different states. Justice should not depend on geography. My story with a broken system is not mine alone. In facing all of these disparities I realized I had a choice. Accept the injustice or re-write the law. So I, along with an incredible team, wrote this bill. Now it is Federal law and Massachusetts law. I’m going to be honest. Talking about something so personal is scary. But I’m sharing this because I hope you see the importance of these civil rights and I hope that you join us to champion these rights in your state. ",
+									victory: true
 								},
 								MD: {
 									fillKey: 'Partial Impl',
@@ -302,7 +303,8 @@ export default class Map extends React.Component {
 									sponsors: 'SPONSORS NEEDED',
 									status: '',
 									riser: 'Jackie Swanson and Brenda Tracy',
-									narrative: ''
+									narrative: '', 
+									victory: true,
 								},
 								PA: {
 									fillKey: 'Partial Impl',
@@ -358,7 +360,8 @@ export default class Map extends React.Component {
 									sponsors: 'Senator Ann Rivers (R)',
 									status: 'Bill filed',
 									riser: 'Leah Griffin',
-									narrative: 'I was raped in April of 2014, and encountered obstacles in every part of a system that was supposed to assist me. The hospital turned me away. The police ignored me. The prosecutors blamed me. The treatment of rape survivors must improve, and to that end I have emailed, called, and collaborated with as many stakeholders as possible. I testified for HB1068 to mandate rape kits be tested in Washington State. I serve on the Sexual Assault Forensic Examination Task Force which will make recommendations for action to the legislature. I met with Sen Patty Murray’s staff, and she drafted The Survivor’s Access to Supportive Care Act based on my experience of being turned away from the ER.'
+									narrative: 'I was raped in April of 2014, and encountered obstacles in every part of a system that was supposed to assist me. The hospital turned me away. The police ignored me. The prosecutors blamed me. The treatment of rape survivors must improve, and to that end I have emailed, called, and collaborated with as many stakeholders as possible. I testified for HB1068 to mandate rape kits be tested in Washington State. I serve on the Sexual Assault Forensic Examination Task Force which will make recommendations for action to the legislature. I met with Sen Patty Murray’s staff, and she drafted The Survivor’s Access to Supportive Care Act based on my experience of being turned away from the ER.',
+									victory: true
 								},
 								WI: {
 									fillKey: 'Partial Impl',
@@ -386,7 +389,8 @@ export default class Map extends React.Component {
 									sponsors: 'SPONSORS NEEDED',
 									status: '',
 									riser: 'Lara McLoed',
-									narrative: ''
+									narrative: '',
+									victory: true
 								},
 								VT: {
 									fillKey: 'Partial Impl',
