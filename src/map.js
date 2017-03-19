@@ -323,7 +323,7 @@ export default class Map extends React.Component {
 									sponsors: 'SPONSORS NEEDED',
 									status: '',
 									riser: 'Jackie Swanson and Brenda Tracy',
-									narrative: '', 
+									narrative: '',
 									victory: true,
 									url: 'https://actonthis.org/causes/rise-oregon'
 								},
@@ -444,5 +444,4 @@ export default class Map extends React.Component {
 			</div>
 		);
 	}
-
 }
