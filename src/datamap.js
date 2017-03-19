@@ -20,6 +20,12 @@ var PopUpComponent = React.createClass({
 
 		if (this.props.victory === true) {
 			const victoryText = 'The Survivors\' Bill of Rights has been implemented here. ';
+            let riserImages = '';
+            if (this.props.riserImages.length) {
+                riserImages = this.props.riserImages.map(function(url, index) {
+                    return <img alt="riser" src={url} key={index} className='riser-image'/>;
+                })
+            }
 			victory = <div>
 						<h1 style={{textAlign: 'center', color: '#da6a50'}}>VICTORY!!</h1>
 						<br/>
@@ -27,6 +33,7 @@ var PopUpComponent = React.createClass({
 							The Riser(s) responsible for leading the movement:
 							<span style={{fontWeight: 'bold'}}> {this.props.riser}</span>.
 						</p>
+                        <div className="riser-images">{riserImages}</div>
 					</div>;
 			return (
 				<div>
@@ -128,10 +135,11 @@ export default class Datamap extends React.Component {
 						let stateName = geography.properties["name"]
 						let victory = dataInfo["victory"] || false
 						let url = dataInfo["url"]
+                        let riserImages = dataInfo["riserImages"] || [];
 						if (victory) {
 							Popup.create({
 								title: stateName,
-								content: <PopUpComponent sponsors={sponsors} status={status} riser={riser} narrative={narrative} victory={victory} />,
+								content: <PopUpComponent sponsors={sponsors} status={status} riser={riser} narrative={narrative} victory={victory} riserImages={riserImages} />,
 								className: 'alert',
 								buttons: {
 									right: [{
