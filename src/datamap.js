@@ -132,6 +132,7 @@ export default class Datamap extends React.Component {
 						let narrative = dataInfo["narrative"]
 						let stateName = geography.properties["name"]
 						let victory = dataInfo["victory"] || false
+						let url = dataInfo["url"]
 						if (victory) {
 							Popup.create({
 								title: stateName,
@@ -157,7 +158,11 @@ export default class Datamap extends React.Component {
 										text: `Help ${help_riser}`,
 										className: 'success',
 										action: function () {
-											window.open('http://risenow.us');
+											if (url != null) {
+												window.open(url);
+											} else {
+												window.open('https://actonthis.org/causes/rise');
+											}
 											Popup.close();
 										}
 									}]
