@@ -58,6 +58,12 @@ body,
 	color: #da6a50
 }
 
+.map-label-h4{
+    font-size: 18px;
+    color: #da6a50;
+    text-align: center;
+}
+
 .map-header {
 	margin-top: 50px;
 	margin-left: 5%;

@@ -8,6 +8,7 @@ export default class Map extends React.Component {
 			<div className="page">
 				<div className="header">
 					<h3 className="map-label">Follow the Movement: Click Your State</h3>
+					<h4 className="map-label-h4">Join the fight!</h4>
 					{/*<p className="map-legend">
 						Follow the progress of the implementation of Sexual Assault Survivors' Rights in all 50 states.
 					</p>*/}

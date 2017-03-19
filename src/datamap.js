@@ -15,16 +15,16 @@ const propChangeRequiresMapClear = (oldProps, newProps) => {
 
 var PopUpComponent = React.createClass({
 	render: function() {
-		let status = null;
 		let narrative = null;
 		let victory = null;
 
 		if (this.props.victory === true) {
+			const victoryText = 'The Survivors\' Bill of Rights has been implemented here. ';
 			victory = <div>
 						<h1 style={{textAlign: 'center', color: '#da6a50'}}>VICTORY!!</h1>
 						<br/>
-						<p style={{margin: 'margin: 0 20px 0 20px'}}>The Survivors' Bill of Rights has been implemented here! 
-							The Riser(s) responsible for leading the movement was 
+						<p style={{margin: 'margin: 0 20px 0 20px'}}> {victoryText}
+							The Riser(s) responsible for leading the movement:
 							<span style={{fontWeight: 'bold'}}> {this.props.riser}</span>.
 						</p>
 					</div>;
@@ -34,19 +34,14 @@ var PopUpComponent = React.createClass({
 				</div>
 			);
 		} else {
-			if (this.props.status !== '') {
-				status = <div><p><span className='popup-label'>Status: </span>{this.props.status}</p><br/></div>;
-			} 
 
 			if (this.props.narrative !== '') {
-				narrative = <div><div className='popup-label'>Narrative: </div><p>{this.props.narrative}</p></div>;
+				const narrativeLabel = `'s Story`
+				narrative = <div><div className='popup-label'>{this.props.riser}{narrativeLabel} : </div><p>{this.props.narrative}</p></div>;
 			}
 
 			return (
 				<div>
-					<p><span className='popup-label'>Sponsors: </span>{this.props.sponsors}</p>
-					<br/>
-					{status}
 					<p><span className='popup-label'>Riser: </span>{this.props.riser}</p>
 					<br/>
 					{narrative}
@@ -55,7 +50,7 @@ var PopUpComponent = React.createClass({
 			);
 		}
 	}
-});	
+});
 
 export default class Datamap extends React.Component {
 
@@ -146,7 +141,7 @@ export default class Datamap extends React.Component {
 											Popup.close();
 										}
 									}]
-								}	
+								}
 							});
 						} else {
 							Popup.create({
