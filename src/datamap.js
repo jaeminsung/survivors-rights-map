@@ -15,7 +15,6 @@ const propChangeRequiresMapClear = (oldProps, newProps) => {
 
 var PopUpComponent = React.createClass({
 	render: function() {
-		let narrative = null;
 		let victory = null;
 
 		if (this.props.victory === true) {
@@ -40,22 +39,41 @@ var PopUpComponent = React.createClass({
 					{victory}
 				</div>
 			);
-		} else {
-
+		} else if(this.props.fillKey === 'Partial Impl') {
+            let narrative = null;
+            let narrative2 = null;
+            let riserImages = null;
+            let riser2 = this.props.riser2 ? ` and ${this.props.riser2}` : '';
+            if(this.props.riserImages.length) {
+                riserImages = this.props.riserImages.map(function(url, index) {
+                    return <img alt="riser" src={url} key={index} className='riser-image'/>;
+                })
+            }
 			if (this.props.narrative !== '') {
-				const narrativeLabel = `'s Story`
-				narrative = <div><div className='popup-label'>{this.props.riser}{narrativeLabel} : </div><p>{this.props.narrative}</p></div>;
+				const narrativeLabel = `${this.props.riser}'s Story`
+				narrative = <div><div className='popup-label'>{narrativeLabel} : </div><p>{this.props.narrative}</p></div>;
 			}
+            if (this.props.narrative2) {
+                const narrative2Label = `${this.props.riser2}'s Story`
+                narrative2 = <div><div className='popup-label'>{narrative2Label} : </div><p>{this.props.narrative}</p></div>;
+            }
 
 			return (
 				<div>
-					<p><span className='popup-label'>Riser: </span>{this.props.riser}</p>
+					<p><span className='popup-label'>Riser: </span>{this.props.riser}{riser2}</p>
 					<br/>
+                    <div className="riser-images">{riserImages}</div>
 					{narrative}
-					{victory}
+					{narrative2}
 				</div>
 			);
-		}
+		} else {
+            return (
+                <div>
+                    <p>We aren’t active in this state yet, please join the movement so we can get in touch when we launch here!</p>
+                </div>
+            );
+        }
 	}
 });
 
@@ -127,15 +145,18 @@ export default class Datamap extends React.Component {
 				done: function(datamap) {
 					datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
 						let dataInfo = JSON.parse(event.target.getAttributeNode('data-info').value)
-						let sponsors = dataInfo["sponsors"]
-						let status = dataInfo["status"]
-						let riser = dataInfo["riser"]
-						let help_riser = riser === 'RISER NEEDED' ? 'the Movement' : riser
-						let narrative = dataInfo["narrative"]
-						let stateName = geography.properties["name"]
-						let victory = dataInfo["victory"] || false
-						let url = dataInfo["url"]
+						let sponsors = dataInfo["sponsors"];
+						let status = dataInfo["status"];
+						let riser = dataInfo["riser"];
+                        let riser2 = dataInfo['riser2'];
+						let help_riser = riser === 'RISER NEEDED' ? 'the Movement' : (riser2 ? `${riser} and ${riser2}` : riser);
+						let narrative = dataInfo["narrative"];
+                        let narrative2 = dataInfo['narrative2'];
+						let stateName = geography.properties["name"];
+						let victory = !!dataInfo["victory"];
+						let url = dataInfo["url"];
                         let riserImages = dataInfo["riserImages"] || [];
+                        let fillKey = dataInfo['fillKey'];
 						if (victory) {
 							Popup.create({
 								title: stateName,
@@ -144,7 +165,7 @@ export default class Datamap extends React.Component {
 								buttons: {
 									right: [{
 										text: `Return and Help Another State`,
-										className: 'ok',
+										className: 'success',
 										action: function () {
 											Popup.close();
 										}
@@ -154,7 +175,7 @@ export default class Datamap extends React.Component {
 						} else {
 							Popup.create({
 								title: stateName,
-								content: <PopUpComponent sponsors={sponsors} status={status} riser={riser} narrative={narrative}/>,
+								content: <PopUpComponent fillKey={fillKey} sponsors={sponsors} status={status} riser={riser} riser2={riser2} narrative={narrative} narrative2={narrative2} riserImages={riserImages}/>,
 								className: 'alert',
 								buttons: {
 									right: [{
