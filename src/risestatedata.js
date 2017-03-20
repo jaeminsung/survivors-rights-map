@@ -149,11 +149,11 @@ module.exports = {
         fillKey: 'Full Impl',
         sponsors: "Representative Tricia-Farley Bouvier, Senator Cindy Creem, 31 bipartisan Co-Sponsors",
         status : "Passed Unanimously through House and Senate; Signed by Governor Baker",
-        riser : "Amanda Nguyen and Sophie Gould",
+        riser : "Amanda Nguyen",
         narrative : "This legislation was born from my experience with a broken justice system. I am a rape survivor. I remember walking into the local area rape crisis center waiting room and seeing so many survivors there. The greatest injustice I have ever faced was not the act of rape itself, but the subsequent denial of my rights by the country I love. I grew up believing that America is special because it recognizes universal, inalienable rights. But as a rape survivor, I learned that not all are equal in the eyes of the law. Survivors are continually re-victimized by the very system that was built to seek justice for them. It’s completely unconscionable that a survivor in one state would have a completely different set of rights than a survivor in another state. In building a legal argument for why I deserve to know where the DNA samples taken from my body were stored, I found a patchwork of rights across America. Two survivors shouldn’t have two completely different sets of rights just because they are in two different states. Justice should not depend on geography. My story with a broken system is not mine alone. In facing all of these disparities I realized I had a choice. Accept the injustice or re-write the law. So I, along with an incredible team, wrote this bill. Now it is Federal law and Massachusetts law. I’m going to be honest. Talking about something so personal is scary. But I’m sharing this because I hope you see the importance of these civil rights and I hope that you join us to champion these rights in your state. ",
         victory: true,
         url: 'https://actonthis.org/causes/rise-massachusetts',
-        riserImages: ['./img/2.png', './img/10.png']
+        riserImages: ['./img/2.png']
     },
     MD: {
         fillKey: 'Partial Impl',
