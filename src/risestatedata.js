@@ -59,7 +59,7 @@ module.exports = {
         riser: 'Sergio Lopez',
         narrative: 'I’m a student at Yale University, originally from the California Bay Area, and currently serving as Connecticut State Director for Rise. In 2013, I was one of the founding members of Students Against Sexual Violence at Yale, a coalition of student leaders, law students, and alumni which was formed to advocate for reform of sexual assault policies at Yale and was featured in Huffington Post, The New Haven Register, and The New York Times. The group was founded on a philosophy of decentralizing leadership to empower members to tell their stories in order to bring about concrete policy change. Discussions between SASVY and the Yale administration led to a slate of reforms by the university, including the permanent formation of a Title IX Student Advisory Board to ensure student voice in the process. In addition, I’ve done legislative advocacy work in the Connecticut state legislature on women’s rights, healthcare, and other issues. I’m currently at work on a book about the origins of Title IX law, which was shaped through a coalition of pioneering student activists and public interest lawyers, correcting the historical record by placing the incredible women who worked to shape the law at the center of their own story.',
         url: 'https://actonthis.org/causes/rise-connecticut',
-        riseImages: ['./img/7.png']
+        riserImages: ['./img/7.png']
     },
     DE: {
         fillKey: 'Partial Impl',
