@@ -337,7 +337,7 @@ module.exports = {
         narrative: ''
     },
     TX: {
-        fillKey: 'No Impl',
+        fillKey: 'Partial Impl',
         sponsors: 'SPONSORS NEEDED',
         status: '',
         riser: 'RISER NEEDED',
