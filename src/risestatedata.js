@@ -340,7 +340,7 @@ module.exports = {
         fillKey: 'No Impl',
         sponsors: 'SPONSORS NEEDED',
         status: '',
-        riser: '',
+        riser: 'RISER NEEDED',
         narrative: '',
         url: 'https://actonthis.org/causes/rise-texas'
     },
