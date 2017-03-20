@@ -20,7 +20,8 @@ module.exports = {
         sponsors: 'Rep Vivian Flowers',
         status: '',
         riser: 'RISER NEEDED',
-        narrative: 'https://actonthis.org/causes/rise-arkansas'
+        narrative: '',
+        url: 'https://actonthis.org/causes/rise-arkansas'
     },
     AZ: {
         fillKey: 'Partial Impl',
