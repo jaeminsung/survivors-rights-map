@@ -115,7 +115,7 @@ body,
 }
 
 .riser-images {
-    /*make images center*/
+    text-align: center;
 }
 
 .riser-image{
