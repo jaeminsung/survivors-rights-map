@@ -18,15 +18,15 @@ export default class Map extends React.Component {
 					<div className="map-header">
 						<div className="category-container">
 							<i className="fa fa-circle impl-icon no-impl"></i>
-							<div className="category">No Implementation</div>
+							<div className="category">Start the Movement Here</div>
 						</div>
 						<div className="category-container">
 							<i className="fa fa-circle impl-icon partial-impl "></i>
-							<div className="category">In Progress</div>
+							<div className="category">Rise Movement Here</div>
 						</div>
 						<div className="category-container">
 							<i className="fa fa-circle impl-icon full-impl"></i>
-							<div className="category">Laws Implemented</div>
+							<div className="category">Victory</div>
 						</div>
 					</div>
 					<div className="map">
