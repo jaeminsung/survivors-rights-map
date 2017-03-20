@@ -55,7 +55,7 @@ var PopUpComponent = React.createClass({
 			}
             if (this.props.narrative2) {
                 const narrative2Label = `${this.props.riser2}'s Story`
-                narrative2 = <div><div className='popup-label'>{narrative2Label} : </div><p>{this.props.narrative}</p></div>;
+                narrative2 = <div><div className='popup-label'>{narrative2Label} : </div><p>{this.props.narrative2}</p></div>;
             }
 
 			return (
