@@ -101,10 +101,11 @@ module.exports = {
         riserImages: ['./img/9.png']
     },
     ID: {
-        fillKey: 'No Impl',
-        sponsors: 'SPONSORS NEEDED',
+        fillKey: 'Full Impl',
         status: '',
-        riser: 'RISER NEEDED',
+        riser: '',
+        narrative: '',
+        victory: true,
         narrative: ''
     },
     IL: {
@@ -155,12 +156,14 @@ module.exports = {
         riserImages: ['./img/2.png']
     },
     MD: {
-        fillKey: 'Partial Impl',
+        fillKey: 'Full Impl',
         sponsors: 'Delegate Shelly Hettleman',
         status: '',
-        riser: 'RISER NEEDED',
+        riser: 'Ty Walker',
         narrative: '',
-        url: 'https://actonthis.org/causes/rise-maryland'
+        victory: true,
+        url: 'https://actonthis.org/causes/rise-maryland',
+        riserImages: ['./img/24.jpg']
     },
     ME: {
         fillKey: 'No Impl',

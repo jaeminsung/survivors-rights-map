@@ -16,6 +16,7 @@ const propChangeRequiresMapClear = (oldProps, newProps) => {
 var PopUpComponent = React.createClass({
 	render: function() {
 		let victory = null;
+		let riserText = null;
 
 		if (this.props.victory === true) {
 			const victoryText = 'The Survivors\' Bill of Rights has been implemented here. ';
@@ -25,12 +26,15 @@ var PopUpComponent = React.createClass({
                     return <img alt="riser" src={url} key={index} className='riser-image'/>;
                 })
             }
+            riserText = 	<span>
+								The Riser(s) responsible for leading the movement:
+								<span style={{fontWeight: 'bold'}}> {this.props.riser}</span>.
+							</span>
 			victory = <div>
 						<h1 style={{textAlign: 'center', color: '#da6a50'}}>VICTORY!!</h1>
 						<br/>
-						<p style={{margin: 'margin: 0 20px 0 20px'}}> {victoryText}
-							The Riser(s) responsible for leading the movement:
-							<span style={{fontWeight: 'bold'}}> {this.props.riser}</span>.
+						<p style={{margin: 'margin: 0 20px 0 20px', textAlign: 'center'}}> {victoryText}
+							{this.props.riser.length ? riserText : ''}
 						</p>
                         <div className="riser-images">{riserImages}</div>
 					</div>;
