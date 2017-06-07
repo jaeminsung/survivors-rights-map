@@ -399,11 +399,12 @@ module.exports = {
         riserImages: ['./img/21.png']
     },
     VT: {
-        fillKey: 'Partial Impl',
+        fillKey: 'Full Impl',
         sponsors: 'Rep Maxine Grad (D)',
         status: '',
-        riser: 'RISER NEEDED',
+        riser: '',
         narrative: '',
-        url: 'https://actonthis.org/causes/rise-vermont'
+        victory: true,
+        narrative: ''
     },
 }
