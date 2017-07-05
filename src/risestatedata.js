@@ -3,9 +3,10 @@ module.exports = {
         fillKey: 'Partial Impl',
         sponsors: 'SPONSORS NEEDED',
         status: '',
-        riser: 'RISER NEEDED',
-        narrative: '',
-        url: 'https://actonthis.org/causes/rise-alabama'
+        riser: 'Michelle Wang',
+        narrative: `When I walked onto Harvard’s campus as a naive freshman, sexual assault and rape were far from the top of my mind. I laughed awkwardly along with new barely-friends as we got consent training about the need for positive, enthusiastic consent, and I continued through most of my college years loved and well-protected by my male and female friends alike. Through typical college relationship drama, there was never a whisper of a doubt about consent. As I entered my senior year, though, this magical facade was crumbling. One by one, I was crushed to hear about the horrifying, deeply traumatic experiences with sexual assault of women close to me and how both the college and the criminal justice system had failed them. I could barely wrap my head around the fact that some of these assaults had been perpetrated by men I had considered protectors and friends. My friends told me how the pain and loss of control broke them and often how avenues they were promised would help only kept them feeling broken and alone. When I entered medical school, those injustices and my feeling of helplessness drove me to find ways to help and care for women who have been forgotten, silenced, or taught to internalize the blame. Alabama is a state that I’ve come to love; a state that is full of heart and fight but whose laws still fail to ensure basic civil rights for survivors. I hope that helping to bring the Survivors' Bill of Rights to Alabama will be a step in the right direction to bringing justice to the survivors of Alabama, and I'm excited to lend my voice to the movement.`,
+        url: 'https://actonthis.org/causes/rise-alabama',
+        riserImages: ['./img/27.png']
     },
     AK: {
         fillKey: 'Partial Impl',
