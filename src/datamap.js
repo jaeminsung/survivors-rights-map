@@ -46,29 +46,40 @@ var PopUpComponent = React.createClass({
 		} else if(this.props.fillKey === 'Partial Impl') {
             let narrative = null;
             let narrative2 = null;
+            let narrative3 = null;
             let riserImages = null;
-            let riser2 = this.props.riser2 ? ` and ${this.props.riser2}` : '';
+            let risers = this.props.riser;
+            if(this.props.riser3){
+            	risers += ', ' + this.props.riser2 + ', and ' + this.props.riser3; 
+            }else if (this.props.riser2){
+            	risers += ' and ' + this.props.riser2;	
+            } 
             if(this.props.riserImages.length) {
                 riserImages = this.props.riserImages.map(function(url, index) {
                     return <img alt="riser" src={url} key={index} className='riser-image'/>;
-                })
+                });
             }
 			if (this.props.narrative !== '') {
-				const narrativeLabel = `${this.props.riser}'s Story`
+				const narrativeLabel = `${this.props.riser}'s Story`;
 				narrative = <div><div className='popup-label'>{narrativeLabel} : </div><p>{this.props.narrative}</p></div>;
 			}
             if (this.props.narrative2) {
-                const narrative2Label = `${this.props.riser2}'s Story`
+                const narrative2Label = `${this.props.riser2}'s Story`;
                 narrative2 = <div><div className='popup-label'>{narrative2Label} : </div><p>{this.props.narrative2}</p></div>;
+            }
+            if (this.props.narrative3) {
+                const narrative3Label = `${this.props.riser3}'s Story`;
+                narrative3 = <div><div className='popup-label'>{narrative3Label} : </div><p>{this.props.narrative3}</p></div>;
             }
 
 			return (
 				<div>
-					<p><span className='popup-label'>Riser: </span>{this.props.riser}{riser2}</p>
+					<p><span className='popup-label'>Riser: </span>{risers}</p>
 					<br/>
                     <div className="riser-images">{riserImages}</div>
 					{narrative}
 					{narrative2}
+					{narrative3}
 				</div>
 			);
 		} else {
@@ -153,9 +164,11 @@ export default class Datamap extends React.Component {
 						let status = dataInfo["status"];
 						let riser = dataInfo["riser"];
                         let riser2 = dataInfo['riser2'];
-						let help_riser = riser === 'RISER NEEDED' ? 'the Movement' : (riser2 ? `${riser} and ${riser2}` : riser);
+                        let riser3 = dataInfo['riser3'];
+						let help_riser = riser === 'RISER NEEDED' ? 'the Movement' : riser3 ? `${riser}, ${riser2}, and ${riser3}` : (riser2 ? `${riser} and ${riser2}` : riser);
 						let narrative = dataInfo["narrative"];
                         let narrative2 = dataInfo['narrative2'];
+                        let narrative3 = dataInfo['narrative3'];
 						let stateName = geography.properties["name"];
 						let victory = !!dataInfo["victory"];
 						let url = dataInfo["url"];
@@ -179,7 +192,7 @@ export default class Datamap extends React.Component {
 						} else {
 							Popup.create({
 								title: stateName,
-								content: <PopUpComponent fillKey={fillKey} sponsors={sponsors} status={status} riser={riser} riser2={riser2} narrative={narrative} narrative2={narrative2} riserImages={riserImages}/>,
+								content: <PopUpComponent fillKey={fillKey} sponsors={sponsors} status={status} riser={riser} riser2={riser2} riser3={riser3} narrative={narrative} narrative2={narrative2} narrative3={narrative3} riserImages={riserImages}/>,
 								className: 'alert',
 								buttons: {
 									right: [{
