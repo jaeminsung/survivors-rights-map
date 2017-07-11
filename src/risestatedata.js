@@ -86,7 +86,7 @@ module.exports = {
         narrative: ''
     },
     HI: {
-        fillKey: 'No Impl',
+        fillKey: 'Partial Impl',
         sponsors: 'SPONSORS NEEDED',
         status: '',
         riser: 'RISER NEEDED',
@@ -167,7 +167,7 @@ module.exports = {
         riserImages: ['./img/24.jpg']
     },
     ME: {
-        fillKey: 'No Impl',
+        fillKey: 'Partial Impl',
         sponsors: 'SPONSORS NEEDED',
         status: '',
         riser: 'RISER NEEDED',
@@ -244,7 +244,7 @@ module.exports = {
         narrative: ''
     },
     NJ: {
-        fillKey: 'No Impl',
+        fillKey: 'Partial Impl',
         sponsors: 'SPONSORS NEEDED',
         status: '',
         riser: 'RISER NEEDED',
