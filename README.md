@@ -1,4 +1,6 @@
 # survivors-rights-map
+A ReactJS project that features an interactive map that tracks the status of legal rights for sexual assault survivors in U.S. See the interactive US map at http://www.risenow.us/who-we-are/
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 ## Getting Started
